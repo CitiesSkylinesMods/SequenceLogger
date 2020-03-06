@@ -4,7 +4,6 @@ namespace SequenceLogger
     using JetBrains.Annotations;
     using SequenceLogger.Events;
     using SequenceLogger.Util;
-    using UnityEngine.SceneManagement;
 
     public class UserMod : IUserMod
     {
