@@ -25,7 +25,7 @@ Does not currently log an in-game events, but those can be added.
 
 It should automatically find your `Managed` folder so there's usually no need to manually add reference paths.
 
-If you run in to problems, see the TM:PE [Build Guide](https://github.com/CitiesSkylinesMods/TMPE/blob/master/docs/BUILDING_INSTRUCTIONS.md) as we use basically the same setup.
+If you run in to problems, see the [TM:PE Build Guide](https://github.com/CitiesSkylinesMods/TMPE/blob/master/docs/BUILDING_INSTRUCTIONS.md) as we use basically the same setup.
 
 ## Contributing
 
