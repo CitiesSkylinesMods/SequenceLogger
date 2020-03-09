@@ -19,7 +19,7 @@ Managers:
 * PluginManager
 * SceneManager
 
-Does not currently log an in-game events, but those can be added.
+Does not currently log any in-game events, but those can be added.
 
 ## Build
 
