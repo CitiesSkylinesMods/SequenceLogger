@@ -84,6 +84,7 @@
     <Compile Include="Events\SceneManagerEvents.cs" />
     <Compile Include="Events\PluginManagerEvents.cs" />
     <Compile Include="Events\LocaleManagerEvents.cs" />
+    <Compile Include="ThreadingExtension.cs" />
     <Compile Include="LoadingExtension.cs" />
     <Compile Include="Util\Log.cs" />
     <Compile Include="UserMod.cs" />
