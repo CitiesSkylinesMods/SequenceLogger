@@ -5,18 +5,20 @@ namespace SequenceLogger
     using SequenceLogger.Events;
     using SequenceLogger.Util;
 
-    public class UserMod : IUserMod
-    {
+    public class UserMod : IUserMod {
+
         [UsedImplicitly]
         public string Name => "Sequence Logger";
 
         [UsedImplicitly]
         public string Description => "Logs out game event sequence.";
 
+        [UsedImplicitly]
         static UserMod() {
             Log.Info("UserMod.ctor() static");
         }
 
+        [UsedImplicitly]
         public UserMod() {
             Log.Info("UserMod.ctor() instance");
         }
@@ -24,10 +26,7 @@ namespace SequenceLogger
         [UsedImplicitly]
         public void OnEnabled() {
             Log.Info("UserMod.OnEnabled()");
-
-            // listen for events
-            LoadingManagerEvents.Start();
-            LocaleManagerEvents.Start();
+            Start();
         }
 
         [UsedImplicitly]
@@ -38,10 +37,21 @@ namespace SequenceLogger
         [UsedImplicitly]
         public void OnDisabled() {
             Log.Info("UserMod.OnDisabled()");
+            Stop();
+        }
 
-            // stop listneing to events
+        private static void Start() {
+            LoadingManagerEvents.Start();
+            LocaleManagerEvents.Start();
+            PluginManagerEvents.Start();
+            SceneManagerEvents.Start();
+        }
+
+        private static void Stop() {
             LoadingManagerEvents.Stop();
             LocaleManagerEvents.Stop();
+            PluginManagerEvents.Stop();
+            SceneManagerEvents.Stop();
         }
     }
 }
