@@ -3,6 +3,7 @@ namespace SequenceLogger.Util {
     using System.IO;
     using System.Reflection;
     using UnityEngine;
+    using UnityEngine.SceneManagement;
 
     /// <summary>
     /// A simple logging class.
@@ -23,9 +24,9 @@ namespace SequenceLogger.Util {
         public static readonly string LogFilePath = Path.Combine(Application.dataPath, LogFileName);
 
         /// <summary>
-        /// Should log file be reset each session? If not, it will be appended.
+        /// Gets or sets a value indicating whether the log file should be reset on startup.
         /// </summary>
-        internal const bool ResetLogFile = true;
+        private static readonly bool ResetLogFile = SceneManager.GetActiveScene().name == "Startup";
 
         /// <summary>
         /// Stopwatch used if <see cref="ShowTimestamp"/> is <c>true</c>.
@@ -54,8 +55,7 @@ namespace SequenceLogger.Util {
 
                 AssemblyName mod = typeof(Log).Assembly.GetName();
                 Info($"\n{mod.Name} v{mod.Version.ToString()}\n", true);
-            }
-            catch {
+            } catch {
                 // ignore
             }
         }
@@ -72,12 +72,12 @@ namespace SequenceLogger.Util {
         /// <summary>
         /// Gets or sets a value indicating whether the log level should be logged.
         /// </summary>
-        private static bool ShowLogLevel { get; set; } = false;
+        public static bool ShowLogLevel { get; set; } = false;
 
         /// <summary>
         /// Gets or sets a value indicating whether timestamps should be logged.
         /// </summary>
-        private static bool ShowTimestamp { get; set; } = false;
+        public static bool ShowTimestamp { get; set; } = false;
 
         /// <summary>
         /// Logs debug trace, only in <c>DEBUG</c> builds.
