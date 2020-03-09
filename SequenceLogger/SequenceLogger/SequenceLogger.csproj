@@ -78,10 +78,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\VersionInfo.cs">
-        <Link>Properties\VersionInfo.cs</Link>
+      <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="Events\LoadingManagerEvents.cs" />
+    <Compile Include="Events\SceneManagerEvents.cs" />
+    <Compile Include="Events\PluginManagerEvents.cs" />
     <Compile Include="Events\LocaleManagerEvents.cs" />
+    <Compile Include="LoadingExtension.cs" />
     <Compile Include="Util\Log.cs" />
     <Compile Include="UserMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
