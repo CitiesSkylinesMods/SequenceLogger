@@ -1,13 +1,32 @@
 # SequenceLogger
 
-Logs when various CSL events occur, useful for discovering the sequence in which they occur.
+Logs when various C:SL events occur, useful for discovering the sequence in which they occur.
+
+You can get it on [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2018193885).
+
+## Event logging
+
+Implicit calls to mod classes:
+
+* IUserMod
+* LoadingExtension
+* ThreadingExtension
+
+Managers:
+
+* LoadingManager
+* LocaleManager
+* PluginManager
+* SceneManager
+
+Does not currently log any in-game events, but those can be added.
 
 ## Build
 
-It will automatically find your `Managed` folder so there's usually no need to manually add reference paths.
+It should automatically find your `Managed` folder so there's usually no need to manually add reference paths.
 
-Thanks to **Kian Zarrin** for making that possible!
+If you run in to problems, see the [TM:PE Build Guide](https://github.com/CitiesSkylinesMods/TMPE/blob/master/docs/BUILDING_INSTRUCTIONS.md) as we use basically the same setup.
 
 ## Contributing
 
-Always welcome :)
+Please contribute to make it better :)
