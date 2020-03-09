@@ -24,11 +24,6 @@ namespace SequenceLogger.Util {
         public static readonly string LogFilePath = Path.Combine(Application.dataPath, LogFileName);
 
         /// <summary>
-        /// Gets or sets a value indicating whether the log file should be reset on startup.
-        /// </summary>
-        private static readonly bool ResetLogFile = SceneManager.GetActiveScene().name == "Startup";
-
-        /// <summary>
         /// Stopwatch used if <see cref="ShowTimestamp"/> is <c>true</c>.
         /// </summary>
         private static readonly Stopwatch Timestamp = Stopwatch.StartNew();
@@ -49,8 +44,16 @@ namespace SequenceLogger.Util {
         /// </summary>
         static Log() {
             try {
-                if (ResetLogFile && File.Exists(LogFilePath)) {
-                    File.Delete(LogFilePath);
+                if (File.Exists(LogFilePath)) {
+                    string scene = SceneManager.GetActiveScene().name;
+
+                    if (scene == "Startup") {
+                        File.Delete(LogFilePath);
+                    } else if (scene == "Game") {
+                        Info("\n--- HOT RELOAD DETECTED ---\n");
+                    } else {
+                        Info("\n--- POSSIBLE HOT RELOAD DETECTED ---\n");
+                    }
                 }
 
                 AssemblyName mod = typeof(Log).Assembly.GetName();
