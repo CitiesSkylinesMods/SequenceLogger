@@ -2,6 +2,8 @@
 
 Logs when various C:SL events occur, useful for discovering the sequence in which they occur.
 
+You can get it on [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2018193885).
+
 ## Event logging
 
 Implicit calls to mod classes:
