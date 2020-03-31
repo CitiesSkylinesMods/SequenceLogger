@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <Import Project="ExternalPaths.props" Condition="Exists('ExternalPaths.props')"/>
-  <Import Project="ManagedDlls.props" Condition="Exists('ManagedDlls.props')"/>
+  <Import Project="ExternalPaths.props" Condition="Exists('ExternalPaths.props')" />
+  <Import Project="ManagedDlls.props" Condition="Exists('ManagedDlls.props')" />
+  <Import Project="Analyzers.props" Condition="Exists('Analyzers.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -30,7 +31,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>RELEASE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -39,6 +40,7 @@
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="Events\LoadingManagerEvents.cs" />
+    <Compile Include="Events\PlatformServiceEvents.cs" />
     <Compile Include="Events\SceneManagerEvents.cs" />
     <Compile Include="Events\PluginManagerEvents.cs" />
     <Compile Include="Events\LocaleManagerEvents.cs" />
@@ -48,14 +50,6 @@
     <Compile Include="UserMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\packages\ReflectionIT.Analyzer.Structs.0.1.0\analyzers\dotnet\cs\ReflectionIT.Analyzer.Structs.dll" />
-    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
-    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="PostBuild.props" Condition="Exists('PostBuild.props')"/>
+  <Import Project="PostBuild.props" Condition="Exists('PostBuild.props')" />
 </Project>

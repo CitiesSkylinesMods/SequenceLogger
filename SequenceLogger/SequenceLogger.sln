@@ -7,7 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequenceLogger", "SequenceL
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AA8ADF47-7AD3-47A6-971D-8809D90C338F}"
 	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
 		CodeAnalysis.ruleset = CodeAnalysis.ruleset
 		VersionInfo.cs = VersionInfo.cs
 	EndProjectSection
