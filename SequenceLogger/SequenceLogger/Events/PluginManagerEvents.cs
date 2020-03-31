@@ -6,7 +6,7 @@ namespace SequenceLogger.Events {
     /// <summary>
     /// Logs <see cref="PluginManager"/> events.
     /// </summary>
-    class PluginManagerEvents {
+    public class PluginManagerEvents {
 
         public static void Start() {
             PluginManager mgr = Singleton<PluginManager>.instance;
@@ -20,11 +20,11 @@ namespace SequenceLogger.Events {
             mgr.eventPluginsStateChanged -= OnPluginsStateChanged;
         }
 
-        public static void OnPluginsChanged() {
+        private static void OnPluginsChanged() {
             Log.Info("PluginManager.eventPluginsChanged");
         }
 
-        public static void OnPluginsStateChanged() {
+        private static void OnPluginsStateChanged() {
             Log.Info("PluginManager.eventPluginsStateChanged");
         }
     }

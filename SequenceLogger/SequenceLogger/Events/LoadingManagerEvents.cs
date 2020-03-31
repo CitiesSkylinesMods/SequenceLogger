@@ -40,31 +40,31 @@ namespace SequenceLogger.Events {
         /// A useful point to perform compatibility checks. UIView and other
         /// useful classes have been instantiated by this point.
         /// </summary>
-        public static void OnIntroLoaded() {
+        private static void OnIntroLoaded() {
             Log.Info("LoadingManager.instance.m_introLoaded");
         }
 
-        public static void OnLevelLoaded(SimulationManager.UpdateMode mode) {
+        private static void OnLevelLoaded(SimulationManager.UpdateMode mode) {
             Log.Info($"LoadingManager.instance.m_levelLoaded({mode})");
         }
 
-        public static void OnLevelPreLoaded() {
+        private static void OnLevelPreLoaded() {
             Log.Info("LoadingManager.instance.m_levelPreLoaded");
         }
 
-        public static void OnLevelPreUnloaded() {
+        private static void OnLevelPreUnloaded() {
             Log.Info("LoadingManager.instance.m_levelPreUnloaded");
         }
 
-        public static void OnLevelUnloaded() {
+        private static void OnLevelUnloaded() {
             Log.Info("LoadingManager.instance.m_levelUnloaded");
         }
 
-        public static void OnMetaDataReady() {
+        private static void OnMetaDataReady() {
             Log.Info("LoadingManager.instance.m_metaDataReady");
         }
 
-        public static void OnSimulationDataReady() {
+        private static void OnSimulationDataReady() {
             Log.Info("LoadingManager.instance.m_simulationDataReady");
         }
     }

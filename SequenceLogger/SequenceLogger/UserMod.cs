@@ -43,6 +43,7 @@ namespace SequenceLogger
         private static void Start() {
             LoadingManagerEvents.Start();
             LocaleManagerEvents.Start();
+            PlatformServiceEvents.Start();
             PluginManagerEvents.Start();
             SceneManagerEvents.Start();
         }
@@ -50,6 +51,7 @@ namespace SequenceLogger
         private static void Stop() {
             LoadingManagerEvents.Stop();
             LocaleManagerEvents.Stop();
+            PlatformServiceEvents.Stop();
             PluginManagerEvents.Stop();
             SceneManagerEvents.Stop();
         }

@@ -5,7 +5,7 @@ namespace SequenceLogger.Events {
     /// <summary>
     /// Logs <see cref="LocaleManager"/> events.
     /// </summary>
-    class LocaleManagerEvents {
+    public class LocaleManagerEvents {
 
         /// <summary>
         /// Add event listeners.
@@ -29,7 +29,7 @@ namespace SequenceLogger.Events {
         /// * Before first call to <see cref="UserMod.OnSettingsUI()"/>.
         /// * Whenever user changes the game language.
         /// </summary>
-        public static void OnLocaleChanged() {
+        private static void OnLocaleChanged() {
             Log.Info("LocaleManager.eventLocaleChanged");
         }
     }
