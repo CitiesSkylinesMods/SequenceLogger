@@ -11,9 +11,11 @@ namespace SequenceLogger.Events {
         /// Add event listeners.
         /// </summary>
         public static void Start() {
-            SceneManager.activeSceneChanged += OnActiveSceneChanged;
-            SceneManager.sceneLoaded += OnSceneLoaded;
-            SceneManager.sceneUnloaded += OnSceneUnloaded;
+            if (Options.Instance.LogSceneManager) {
+                SceneManager.activeSceneChanged += OnActiveSceneChanged;
+                SceneManager.sceneLoaded += OnSceneLoaded;
+                SceneManager.sceneUnloaded += OnSceneUnloaded;
+            }
         }
 
         /// <summary>

@@ -8,12 +8,16 @@ namespace SequenceLogger.Events {
     public class PlatformServiceEvents {
 
         public static void Start() {
-            PlatformService.eventGameOverlayActivated += OnGameOverlayActivated;
-            PlatformService.workshop.eventSubmitItemUpdate += OnSubmitItemUpdate;
-            PlatformService.workshop.eventUGCQueryCompleted += OnUGCQueryCompleted;
-            PlatformService.workshop.eventUGCRequestUGCDetailsCompleted += OnUGCRequestUGCDetailsCompleted;
-            PlatformService.workshop.eventWorkshopItemInstalled += OnWorkshopItemInstalled;
-            PlatformService.workshop.eventWorkshopSubscriptionChanged += OnWorkshopSubscriptionChanged;
+            if (Options.Instance.LogPlatformService) {
+                PlatformService.eventGameOverlayActivated += OnGameOverlayActivated;
+                PlatformService.workshop.eventSubmitItemUpdate += OnSubmitItemUpdate;
+                PlatformService.workshop.eventWorkshopItemInstalled += OnWorkshopItemInstalled;
+                PlatformService.workshop.eventWorkshopSubscriptionChanged += OnWorkshopSubscriptionChanged;
+            }
+            if (Options.Instance.LogPlatformServiceUGC) {
+                PlatformService.workshop.eventUGCQueryCompleted += OnUGCQueryCompleted;
+                PlatformService.workshop.eventUGCRequestUGCDetailsCompleted += OnUGCRequestUGCDetailsCompleted;
+            }
         }
 
         public static void Stop() {
