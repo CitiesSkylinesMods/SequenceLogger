@@ -10,14 +10,16 @@ namespace SequenceLogger.Events {
         /// Add event listeners.
         /// </summary>
         public static void Start() {
-            LoadingManager mgr = LoadingManager.instance;
-            mgr.m_introLoaded += OnIntroLoaded;
-            mgr.m_levelLoaded += OnLevelLoaded;
-            mgr.m_levelPreLoaded += OnLevelPreLoaded;
-            mgr.m_levelPreUnloaded += OnLevelPreUnloaded;
-            mgr.m_levelUnloaded += OnLevelUnloaded;
-            mgr.m_metaDataReady += OnMetaDataReady;
-            mgr.m_simulationDataReady += OnSimulationDataReady;
+            if (Options.Instance.LogLoadingManager) {
+                LoadingManager mgr = LoadingManager.instance;
+                mgr.m_introLoaded += OnIntroLoaded;
+                mgr.m_levelLoaded += OnLevelLoaded;
+                mgr.m_levelPreLoaded += OnLevelPreLoaded;
+                mgr.m_levelPreUnloaded += OnLevelPreUnloaded;
+                mgr.m_levelUnloaded += OnLevelUnloaded;
+                mgr.m_metaDataReady += OnMetaDataReady;
+                mgr.m_simulationDataReady += OnSimulationDataReady;
+            }
         }
 
         /// <summary>

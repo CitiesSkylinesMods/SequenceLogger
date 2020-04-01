@@ -9,9 +9,11 @@ namespace SequenceLogger.Events {
     public class PluginManagerEvents {
 
         public static void Start() {
-            PluginManager mgr = Singleton<PluginManager>.instance;
-            mgr.eventPluginsChanged += OnPluginsChanged;
-            mgr.eventPluginsStateChanged += OnPluginsStateChanged;
+            if (Options.Instance.LogPluginManager) {
+                PluginManager mgr = Singleton<PluginManager>.instance;
+                mgr.eventPluginsChanged += OnPluginsChanged;
+                mgr.eventPluginsStateChanged += OnPluginsStateChanged;
+            }
         }
 
         public static void Stop() {

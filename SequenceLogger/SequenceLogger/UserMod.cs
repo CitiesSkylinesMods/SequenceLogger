@@ -30,8 +30,9 @@ namespace SequenceLogger
         }
 
         [UsedImplicitly]
-        public void OnSettingsUI(UIHelperBase helper) {
+        public void OnSettingsUI(UIHelperBase panel) {
             Log.Info("UserMod.OnSettingsUI()");
+            Settings.Render(panel);
         }
 
         [UsedImplicitly]
@@ -40,7 +41,7 @@ namespace SequenceLogger
             Stop();
         }
 
-        private static void Start() {
+        internal static void Start() {
             LoadingManagerEvents.Start();
             LocaleManagerEvents.Start();
             PlatformServiceEvents.Start();
@@ -48,7 +49,7 @@ namespace SequenceLogger
             SceneManagerEvents.Start();
         }
 
-        private static void Stop() {
+        internal static void Stop() {
             LoadingManagerEvents.Stop();
             LocaleManagerEvents.Stop();
             PlatformServiceEvents.Stop();

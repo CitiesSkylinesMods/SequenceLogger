@@ -11,9 +11,11 @@ namespace SequenceLogger.Events {
         /// Add event listeners.
         /// </summary>
         public static void Start() {
-            LocaleManager.eventLocaleChanged += OnLocaleChanged;
-            // LocaleManager.eventLocaleNeedsSubsitution
-            // LocaleManager.eventUIComponentLocaleChanged
+            if (Options.Instance.LogLocaleManager) {
+                LocaleManager.eventLocaleChanged += OnLocaleChanged;
+                // LocaleManager.eventLocaleNeedsSubsitution
+                // LocaleManager.eventUIComponentLocaleChanged
+            }
         }
 
         /// <summary>
