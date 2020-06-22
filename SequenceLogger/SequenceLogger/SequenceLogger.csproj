@@ -39,7 +39,9 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="AssetDataExtension.cs" />
     <Compile Include="Attributes\StorageFileAttribute.cs" />
+    <Compile Include="SerializableDataExtension.cs" />
     <Compile Include="Events\LoadingManagerEvents.cs" />
     <Compile Include="Events\PlatformServiceEvents.cs" />
     <Compile Include="Events\SceneManagerEvents.cs" />
