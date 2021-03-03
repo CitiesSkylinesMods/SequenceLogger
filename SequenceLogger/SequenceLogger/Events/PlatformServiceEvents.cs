@@ -34,15 +34,18 @@ namespace SequenceLogger.Events {
         }
 
         private static void OnSubmitItemUpdate(SubmitItemUpdateResult result, bool ioError) {
-            Log.Info($"PlatformService.workshop.eventSubmitItemUpdate(result, {ioError})");
+            Log.Info($"PlatformService.workshop.eventSubmitItemUpdate(" +
+                $"result ({result.result}), {ioError})");
         }
 
         private static void OnUGCQueryCompleted(UGCDetails result, bool ioError) {
-            Log.Info($"PlatformService.workshop.eventUGCQueryCompleted(result, {ioError})");
+            Log.Info($"PlatformService.workshop.eventUGCQueryCompleted(" +
+                $"result (id:{result.publishedFileId}), {ioError})");
         }
 
         private static void OnUGCRequestUGCDetailsCompleted(UGCDetails result, bool ioError) {
-            Log.Info($"PlatformService.workshop.eventUGCRequestUGCDetailsCompleted(result, {ioError})");
+            Log.Info($"PlatformService.workshop.eventUGCRequestUGCDetailsCompleted(" +
+                $"result (id:{result.publishedFileId}), {ioError})");
         }
 
         private static void OnWorkshopItemInstalled(PublishedFileId id) {
